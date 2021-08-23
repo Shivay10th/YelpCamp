@@ -1,0 +1,21 @@
+<!-- @format -->
+
+<% layout('./layout/boilerplate.ejs') %>
+<div class="container">
+	<h1 id="new-head">
+		Edit Comment
+	</h1>
+	<div class="row">
+		<div id="form">
+			<form action="/campground/<%=campId%>/comments/<%=comment._id%>?_method=PUT" method="POST">
+				<div class="form-group">
+					<label for="">Comment:</label>
+					<textarea class="form-control" name="comment[text]" rows="3">
+<%=comment.text%></textarea>
+				</div>
+				<button class="btn btn-lg btn btn-outline-dark ">Submit</button>
+			</form>
+			<a href="/campground/<%=campId%>" class="text-dark">Go back</a>
+		</div>
+	</div>
+</div>

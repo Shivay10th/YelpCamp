@@ -1,0 +1,36 @@
+<% layout('./layout/boilerplate.ejs') %>
+
+<div class="container">
+
+	<div class="jumbotron">
+		<h1>Hello there! Welcome to our website</h1>
+		<a href="/" class="btn btn-lg btn-primary my-2">Home</a>
+		<a href="/campground/new" class="btn btn-lg btn-primary my-2">Add New</a>
+
+	</div>
+
+
+	<div class="row text-center" style="display: flex; flex-wrap: wrap;">
+		<% campground.forEach(place=>{ %>
+		<div class="col-md-3 col-sm-6">
+			<div class="card">
+				<img class="img-thumbnail card-img-top" src="<%=place.image %>" alt="" />
+
+				<div class="card-body">
+					<div class="card-text">
+						<%=place.name %>
+					</div>
+
+				</div>
+				<p>
+					<a href="/campground/<%=place._id%>" class="btn btn-outline-dark">More info</a>
+				</p>
+			</div>
+
+		</div>
+		<%});%>
+
+	</div>
+
+</div>
+</div>
